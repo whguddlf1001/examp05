@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+	fieldset {float : left; margin-right:2em}
+	buttom img, fieldset div {width : 50px; height : 50px; border : 1px solid black }
+</style>
+</head>
+<body>
+	<h1>가위바위보 게임</h1>
+	<button id = "ga" onclick = "select_user(this.id)">
+		<img src = "../img/가위.jpg">
+	</button>
+	
+	<button id = "ba" onclick = "select_user(this.id)">
+		<img src = "../img/바위.jpg">
+	</button>
+	
+	<button id = "bo" onclick = "select_user(this.id)">
+		<img src = "../img/보.jpg">
+	</button>
+	<fieldset>
+		<legend>컴퓨터 선택 </legend>
+		<div id = "select_com"> </div>
+	</fieldset>
+	<hr style = "clear : both">
+	<h2>결과:</h2>
+	<div id = "result"></div>
+</body>
+<script>
+	let select_com = document.getElementById("select_com");
+	 function select_user(val){
+	console.log(val)
+	var btns = document.getElementsByTahName("button");
+ 	for(let i=0;i<dtns.length;i++){
+ 		btns[i].disabled=true;
+ 		
+ 	}
+ 	select_comF();
+ }
+ function select_comf(){
+	 print_com(function(){console.log("컴퓨터 선택 끝")})
+ }
+ function print_com(cb){
+	 iet cnt=0;
+	 let pid=setInterval(function(){
+		 let rd = Math.floor(Mate.random()*(3-1)+1);
+		 iet str ="";
+		 switch(rd){
+		 case 1: str = "<img scr = '../img/가위.jpg'>"; break;
+		 case 2: str = "<img scr = '../img/바위.jpg'>"; break;
+		 case 3: str = "<img scr = '../img/보.jpg'>"; 
+		 }
+		 select_com.innerHTML=str;
+		if(cnt>10){clearInterval(pid);return cb();}	 
+	 },500);
+	 
+ }
+ </script>
+ </html>
+ 
+ 
+ 

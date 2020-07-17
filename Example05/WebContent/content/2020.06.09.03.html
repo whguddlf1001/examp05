@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	for(let i=0;i<=10;i++){
+		if(i==5){
+			continue;
+		}
+		document.write(i+"<br>")
+	}
+	for(let i=1;i<=10;i++){
+		for(let j=10;j>=0;j--){
+			let tmp = j-i;
+			if(tmp<0){
+				break;
+			}
+			document.write('☆')
+		}
+		document.write("<br>")
+	}
+	
+	
+	for(let i=1;i<=10;i++){
+		for(let j=1;j<=i;j++){
+			let tmp = j-i;
+			document.write('☆')
+		}
+		document.write("<br>")
+	}
+	//예외처리(오류처리) Exception
+	try{
+		throw("강제예외발생");
+		docmrit.wirte("오류발생");	
+	}catch(error){
+		if(error=="강제예외발생"){
+			document.write("개발자가강제로예외를 방생기켰습니다.")
+		}
+		console.log("error");
+		console.log("예외를 처리 하였습니다.")	
+	}
+	document.write("오류후 실행 코드");
+	//0과 10을 입력하지 마시오
+	try{
+		var userInput=prompt("0과 10은입력하지마시오")
+		if(userInput==0){
+			throw("0을 입력하였네요");
+		}else if(userInput==10){
+			throw("10을 입력하였네요");
+		}
+	}
+	catch(msg){
+		alert(msg);
+	}
+	finally{
+		document.write(userInput+"을 입력하였습니다.");
+	}
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

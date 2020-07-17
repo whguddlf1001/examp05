@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+//★ forEach(cb)
+	var testArr1 = [10,30,50,70,90];
+	var tmpArr = [];
+	testArr1.forEach(function(item,index,arr){
+		tmpArr.push(item+this);
+	},50);
+	console.log(tmpArr);
+//from(object[,mapfunction][,thisvalue])
+	var testObj = new String("123456");
+	console.log(Array.from(testObj));
+//★ array.includes(element, start) 배열이 해당 element를 포함여부
+	console.log(testArr1.includes(50));
+//★ array.indexOf(item[,start]) // 해당 값 위치의 인덱스 출력
+	var testArr2 = ["홍","박","김","정"];
+	console.log(testArr2.indexOf("박")); //1
+//string.charAt(position[,start])// 해당 위치의 값을 출력
+	console.log(testArr2[3]); //정
+</script>
+</head>
+<body>
+
+</body>
+</html>
